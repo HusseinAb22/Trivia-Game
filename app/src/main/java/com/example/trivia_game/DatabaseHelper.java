@@ -85,7 +85,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String currentDate = dayOfMonth + "-" + month + "-" +year;
 
-        int hour = calendar.get(Calendar.HOUR_OF_DAY)+2; // 24-hour format
+        int hour = calendar.get(Calendar.HOUR_OF_DAY); // 24-hour format
         int minute = calendar.get(Calendar.MINUTE);
         int second = calendar.get(Calendar.SECOND);
         String currentTime = String.format("%02d:%02d:%02d", hour, minute, second);

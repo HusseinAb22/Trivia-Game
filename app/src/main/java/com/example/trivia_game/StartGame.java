@@ -37,7 +37,7 @@ public class StartGame extends AppCompatActivity {
         str=Date_Time+"\n\n";
 
         if (!allResults.isEmpty()) {
-            str += allResults.get(allResults.size() - 1)[0] + "\n\n\n";
+            str +="The last result was: "+ allResults.get(allResults.size() - 1)[0] + "\n\n\n";
             lastResult.setText(str);
         } else {
             lastResult.setText("No previous results found.");

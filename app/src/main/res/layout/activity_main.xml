@@ -16,6 +16,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="619dp"
         android:text="Question!"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,8 +43,9 @@
             android:layout_width="match_parent"
             android:layout_height="76dp"
             android:layout_marginStart="10dp"
+            android:textSize="20sp"
             android:layout_marginEnd="10dp"
-
+            android:backgroundTint="@color/purple"
             android:textColor="@android:color/black"
             android:text="A" />
 
@@ -53,7 +55,9 @@
             android:layout_height="76dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:textSize="20sp"
             android:textColor="@android:color/black"
+            android:backgroundTint="@color/purple"
             android:text="B" />
 
         <Button
@@ -62,6 +66,8 @@
             android:layout_height="76dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:textSize="20sp"
+            android:backgroundTint="@color/purple"
             android:textColor="@android:color/black"
             android:text="C" />
 
@@ -71,6 +77,8 @@
             android:layout_height="76dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/purple"
+            android:textSize="20sp"
             android:textColor="@android:color/black"
             android:text="D" />
 

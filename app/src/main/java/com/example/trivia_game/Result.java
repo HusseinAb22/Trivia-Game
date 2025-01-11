@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Result extends AppCompatActivity {
     private TextView resultView, text1;
-    private Button reset;
+    private Button reset,exit;
     DatabaseHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class Result extends AppCompatActivity {
         resultView = findViewById(R.id.ResultView);
         text1 = findViewById(R.id.textView2);
         reset=findViewById(R.id.restart);
+        exit=findViewById(R.id.exit);
         dbHelper = new DatabaseHelper(this);
         // Retrieve score and wrongAnswers from the Intent
         int score = getIntent().getIntExtra("score", 0);  // Default to 0 if no score is passed
@@ -44,6 +45,14 @@ public class Result extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Result.this,MainActivity.class );
+                startActivity(intent);
+                finish();
+            }
+        });
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Result.this,LoginActivity.class );
                 startActivity(intent);
                 finish();
             }
