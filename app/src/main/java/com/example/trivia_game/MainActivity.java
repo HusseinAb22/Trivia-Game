@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private List<String> wrongAnswers = new ArrayList<>();
     private TextView questionTextView;
     private Button buttonA, buttonB, buttonC, buttonD;
+    DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         buttonB = findViewById(R.id.buttonB);
         buttonC = findViewById(R.id.buttonC);
         buttonD = findViewById(R.id.buttonD);
-
+        dbHelper = new DatabaseHelper(this);
         String[] options1 = {"Seoul", "Beijing", "Tokyo", "Bangkok"};
         Question_Answer q1 = new Question_Answer(options1, "Tokyo", "What is the capital of Japan?");
         String[] options2 = {"6", "8", "10", "12"};
@@ -44,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
         Question_Answer q4 = new Question_Answer(options4, "Lion", "Which animal is known as the 'King of the Jungle'?");
         String[] options5 = {"South Korea", "Japan", "China", "India"};
         Question_Answer q5 = new Question_Answer(options5, "Japan", "Which country is known as the 'Land of the Rising Sun'?");
+
+        dbHelper.insertQuestion(q1.getQuestion(), q1.getAnswers(), q1.getCorrect_answer());
+        dbHelper.insertQuestion(q2.getQuestion(), q2.getAnswers(), q2.getCorrect_answer());
+        dbHelper.insertQuestion(q3.getQuestion(), q3.getAnswers(), q3.getCorrect_answer());
+        dbHelper.insertQuestion(q4.getQuestion(), q4.getAnswers(), q4.getCorrect_answer());
+        dbHelper.insertQuestion(q5.getQuestion(), q5.getAnswers(), q5.getCorrect_answer());
 
         questions = new ArrayList<>();
         questions.add(q1);
@@ -139,4 +146,5 @@ public class MainActivity extends AppCompatActivity {
         buttonC.setText("C: " + questions.get(ind).getAnswers()[2]);
         buttonD.setText("D: " + questions.get(ind).getAnswers()[3]);
     }
+
 }

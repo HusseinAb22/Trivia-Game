@@ -1,5 +1,7 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id("com.android.application")
+    id("com.google.gms.google-services")
+    //alias(libs.plugins.android.application)
 }
 
 android {
@@ -25,6 +27,9 @@ android {
             )
         }
     }
+    buildFeatures{
+        viewBinding =true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -32,7 +37,8 @@ android {
 }
 
 dependencies {
-
+    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    implementation("com.google.firebase:firebase-analytics")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -40,4 +46,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }
